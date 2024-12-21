@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Task from "./Task";
 import { saveTasks, loadTasks } from "./localStorage";
+import { v4 as uuid } from "uuid";
 import './styles.css'
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
   const handleAddTask = () => {
     if (newTaskTitle.trim()) {
       const newTask = {
-        id: `task-${Date.now()}`,
+        id:uuid(),
         title: newTaskTitle,
         status: "To Do",
       };
