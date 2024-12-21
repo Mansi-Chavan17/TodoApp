@@ -13,8 +13,7 @@ const App = () => {
     ];
 
   const [tasks, setTasks] = useState(initialTasks);
-  const [newTaskTitle, setNewTaskTitle] = useState(""); // State for task input
-
+  const [newTaskTitle, setNewTaskTitle] = useState(""); 
   const handleAddTask = () => {
     if (newTaskTitle.trim()) {
       const newTask = {
@@ -49,7 +48,7 @@ const App = () => {
         <input
           type="text"
           value={newTaskTitle}
-          onChange={(e) => setNewTaskTitle(e.target.value)} // Update state with input value
+          onChange={(e) => setNewTaskTitle(e.target.value)}
           placeholder="Enter task title"
         />
         <button onClick={handleAddTask}>Add Task</button>
