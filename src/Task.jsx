@@ -1,3 +1,5 @@
+
+import PropTypes from "prop-types"; 
 const Task = ({ task, moveTask, handleDelete, currentStatus }) => {
   return (
     <div className="task-card" data-testid={`task-${task.id}`}>
@@ -16,6 +18,17 @@ const Task = ({ task, moveTask, handleDelete, currentStatus }) => {
       </div>
     </div>
   );
+};
+
+Task.propTypes = {
+  task: PropTypes.shape({
+    id: PropTypes.string.isRequired, 
+    title: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+  }).isRequired,
+  moveTask: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired,
+  currentStatus: PropTypes.string.isRequired,
 };
 
 export default Task;
